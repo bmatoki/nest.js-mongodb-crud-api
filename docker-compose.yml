@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nest-js:
+    build: .
+    command: "npm run debug"
+    volumes:
+      - '.:/usr/src/app'
+    ports:
+      - '3000:3000'
+      - '9229:9229'
+    depends_on:
+      - mongodb
+
+
+  mongodb:
+    image: mongo
