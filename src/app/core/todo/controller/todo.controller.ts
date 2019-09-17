@@ -1,4 +1,5 @@
-import { Controller,Get,Post,Put,Body,Logger,Delete,ValidationPipe  } from '@nestjs/common';
+import { Controller,Get,Post,Put,Body,Logger,
+         Delete,ValidationPipe,UsePipes,HttpException,HttpStatus } from '@nestjs/common';
 import { TodoService } from '../service/todo.service';
 import { TodoDTO } from '../dto/todo.dto';
 
@@ -7,7 +8,8 @@ export class TodoController {
   constructor(private readonly todoService: TodoService) {}
 
   @Post()
-  async saveTodo(@Body('payload') payload) {
+  @UsePipes(new ValidationPipe())
+  async saveTodo(@Body('payload') payload:TodoDTO) {
     try {
       Logger.log('Controller: TODO function saveTodo POST: started');
       await this.todoService.create(payload);

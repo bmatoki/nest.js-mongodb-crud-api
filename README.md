@@ -19,9 +19,11 @@ docker-compose up
 ### TODO REMAIN:
 
 ```
-* http exception .
+* http exception:
+example:
+throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+
 * unit tests.
-* validations - dto.
 
 ```
 
