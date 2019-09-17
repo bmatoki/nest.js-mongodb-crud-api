@@ -19,9 +19,9 @@ docker-compose up
 ### TODO REMAIN:
 
 ```
-* http exception -  instead try catch finally.
+* http exception .
 * unit tests.
-* validations - req.body
+* validations - dto.
 
 ```
 

@@ -1,6 +1,6 @@
 import { Injectable,Inject  } from '@nestjs/common';
 import { Model  } from 'mongoose';
-import { Todo } from '../../shared/interfaces/todo.mongo.interface';
+import { Todo } from '../../../shared/interfaces/todo.mongo.interface';
 
 @Injectable()
 export class TodoService {
